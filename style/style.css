@@ -9,7 +9,6 @@
 .registrimg {
     background-image: url(../img/xhero-img.png.pagespeed.ic.5EnILQZFRo.webp);
     background-repeat: no-repeat;
-    background-size: cover;
 }
 .registration {
     width: 40%;
@@ -46,4 +45,13 @@ label {
     border: 2px solid rgba(39, 21, 138, 0.5);
     background-color: rgba(0, 75, 136, 0.7);
     cursor: pointer;
+}
+.registration p {
+    color: red;
+    font-size: 10px;
+}
+
+
+@media only screen and (max-width: 1024px){
+
 }

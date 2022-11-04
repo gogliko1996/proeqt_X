@@ -8,6 +8,7 @@ for(i=0; i< NavBarLength; i++){
 }
 ul += "</ul>";
 document.getElementById("nav").innerHTML = ul;
+document.getElementById("burgermanu").innerHTML = ul;
 
 // slider..............................//
 
@@ -16,7 +17,7 @@ document.getElementById("nav").innerHTML = ul;
         id: 1,
         name: "We provide best IT solution",
         title: "Naxly bring the power of data science and artificial intelligence to every business.",
-        img:  "https://preview.colorlib.com/theme/itkol/assets/img/hero/xhero-img.png.pagespeed.ic.5EnILQZFRo.webp"
+        img:  "https://www.engineering.columbia.edu/files/seas/styles/816x460/public/content/cs_image/2022/28/robot_hero.jpg?itok=TrT_MOb-"
 
     },
     { 
@@ -83,8 +84,14 @@ setInterval (() => {
 }, 5000);
 
 // slider circles..............................
+const divRingBox = document.getElementById("ringbox");
+SlidArray.forEach (item => {
+    const divRing = document.createElement("div");
+    divRing.setAttribute("id", item.id-1);
+    divRingBox.appendChild(divRing);
 
-SlidArray.forEacf (item => {
-
-
+    divRing.addEventListener("click", (ivent) => {
+        next = ivent.target.id;
+        slider(next);
+   } )
 })

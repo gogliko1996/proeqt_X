@@ -22,21 +22,21 @@ const SlidArray = [
   },
   {
     id: 2,
-    name: "We provide best IT solution",
+    name: "IT solutions for startup and enterprises",
     title:
       "Naxly bring the power of data science and artificial intelligence to every business.",
     img: "https://markedium.com/wp-content/uploads/2021/04/Untitled-design5.png",
   },
   {
     id: 3,
-    name: "We provide best IT solution",
+    name: "ITKol - Partner for Your Business",
     title:
       "Naxly bring the power of data science and artificial intelligence to every business.",
     img: "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1350320510/image_1350320510.jpg?io=getty-c-w640",
   },
   {
     id: 4,
-    name: "We provide best IT solution",
+    name: "Some of Our Great Stuffs",
     title:
       "Naxly bring the power of data science and artificial intelligence to every business.",
     img: "https://imageio.forbes.com/specials-images/imageserve/5f77700591bc4fcc93c3c1cc/China-continues-to-move-forward-with-advances-in-using-robotics-and-AI-in/960x0.jpg?format=jpg&width=960",

@@ -1,4 +1,4 @@
-////////////////navigation bar////////////////
+////////////////navigation manu////////////////
 const NavBar = ["HOME", "SERVICE", "BLOG", "CASE STUDY", "REGISTRATION"];
 let NavBarLength = NavBar.length;
 let ul = "<ul>";
@@ -54,7 +54,7 @@ div.appendChild(img);
 let next = 0;
 let currentid = 0;
 
-// slider circles..............................
+// slider  div circles..............................
 const divRingBox = document.getElementById("ringbox");
 SlidArray.forEach((item) => {
   const divRing = document.createElement("div");
@@ -65,14 +65,13 @@ SlidArray.forEach((item) => {
     next = ivent.target.id;
     slider(next);
   });
-
 });
 
 const forblack = (id) => {
-    document.getElementById(currentid).style.background = "rgba(0,0,0,0)"
-    document.getElementById(currentid).style.border = "3px solid #000000"
-    document.getElementById(id).style.background = "#000";
-    currentid = id;
+  document.getElementById(currentid).style.background = "rgba(0,0,0,0)";
+  document.getElementById(currentid).style.border = "3px solid #000000";
+  document.getElementById(id).style.background = "#000";
+  currentid = id;
 };
 
 const slider = (item) => {
@@ -103,7 +102,7 @@ setInterval(() => {
   if (next == 0) {
     next = SlidArray.length - 1;
   } else {
-    next --;
+    next--;
   }
   slider(next);
 }, 5000);
@@ -113,11 +112,96 @@ setInterval(() => {
 const Burger = document.getElementById("burgerbar");
 const BurgerManu = document.getElementById("burgermanu");
 
-Burger.addEventListener("click", () =>{
+Burger.addEventListener("click", () => {
   BurgerManu.classList.toggle("burgermanublock");
-})
+});
 
+// navigation scrol background color ..............
 
+const header = document.getElementById("header");
+window.addEventListener("scroll", () => {
+  const Scroll = this.scrollY;
 
+  if (Scroll > 75) {
+    header.style.background = "rgba(12, 45, 136, 0.1)";
+  }
 
+  if (Scroll > 150) {
+    header.style.background = "rgba(12, 45, 136, 0.2)";
+  } else if (Scroll < 150) {
+    header.style.background = "rgba(12, 45, 136, 0.1)";
+  }
 
+  if (Scroll > 250) {
+    header.style.background = "rgba(12, 45, 136, 0.5)";
+  } else if (Scroll < 250) {
+    header.style.background = "rgba(12, 45, 136, 0.2)";
+  }
+
+  if (Scroll > 350) {
+    header.style.background = "rgba(12, 45, 136, 0.7)";
+  } else if (Scroll < 350) {
+    header.style.background = "rgba(12, 45, 136, 0.5)";
+  }
+
+  if (Scroll > 450) {
+    header.style.background = "rgba(12, 45, 136, 0.9)";
+  } else if (Scroll < 450) {
+    header.style.background = "rgba(12, 45, 136, 0.7)";
+  }
+
+  if (Scroll > 400) {
+    header.style.background = "rgba(12, 45, 136, 1)";
+  } else if (Scroll < 400) {
+    header.style.background = "rgba(12, 45, 136, 0.9)";
+  }
+
+  if (Scroll === 0) {
+    header.style.background = "rgba(12, 45, 136, 0)";
+  }
+});
+
+// Server pick up ,............................
+
+const section = document.getElementById("StatiaBox");
+
+const Server = async (url) => {
+  const GetServer = await fetch(url, {
+    method: "GET",
+  });
+
+  if (GetServer.status !== 200) {
+    throw GetServer.status;
+  }
+
+  const Serverjson = await GetServer.json();
+  return Serverjson;
+};
+Server("https://jsonplaceholder.typicode.com/posts")
+
+  .then( GetserverJson => {
+    GetserverJson.forEach((item) => {
+      ServerTeg(item);
+    });
+  })
+
+  .catch( error => {
+    const section = document.getElementById("StatiaBox");
+    const Perror = document.createElement("p");
+    Perror.innerText = "ERROR";
+    section.appendChild(Perror);
+  });
+
+const ServerTeg = item  => {
+  const article = document.createElement("article");
+  const h2 = document.createElement("h2");
+  const p = document.createElement("p");
+  const span = document.createElement("span");
+  const buttan = document.createElement("button");
+  buttan.inetrext = "open post";
+  h2.innerText = item.title;
+  article.appendChild(h2);
+  section.appendChild(article);
+  console.log(item.id);
+};
+ServerTeg();

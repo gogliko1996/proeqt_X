@@ -67,11 +67,11 @@ SlidArray.forEach((item) => {
   });
 });
 
-const forblack = (id) => {
+const forblack = (Slidid) => {
   document.getElementById(currentid).style.background = "rgba(0,0,0,0)";
   document.getElementById(currentid).style.border = "3px solid #000000";
-  document.getElementById(id).style.background = "#000";
-  currentid = id;
+  document.getElementById(Slidid).style.background = "#000";
+  currentid = Slidid;
 };
 
 const slider = (item) => {
@@ -128,32 +128,22 @@ window.addEventListener("scroll", () => {
 
   if (Scroll > 150) {
     header.style.background = "rgba(12, 45, 136, 0.2)";
-  } else if (Scroll < 150) {
-    header.style.background = "rgba(12, 45, 136, 0.1)";
   }
 
   if (Scroll > 250) {
     header.style.background = "rgba(12, 45, 136, 0.5)";
-  } else if (Scroll < 250) {
-    header.style.background = "rgba(12, 45, 136, 0.2)";
   }
 
   if (Scroll > 350) {
     header.style.background = "rgba(12, 45, 136, 0.7)";
-  } else if (Scroll < 350) {
-    header.style.background = "rgba(12, 45, 136, 0.5)";
   }
 
   if (Scroll > 450) {
     header.style.background = "rgba(12, 45, 136, 0.9)";
-  } else if (Scroll < 450) {
-    header.style.background = "rgba(12, 45, 136, 0.7)";
   }
 
   if (Scroll > 400) {
     header.style.background = "rgba(12, 45, 136, 1)";
-  } else if (Scroll < 400) {
-    header.style.background = "rgba(12, 45, 136, 0.9)";
   }
 
   if (Scroll === 0) {
@@ -161,9 +151,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
+let ArrayFillter = []; ////   fillter method   array  //////////
+
 // Server pick up ,............................
 
 const section = document.getElementById("StatiaBox");
+const Serverp = document.createElement("p");
 
 const Server = async (url) => {
   const GetServer = await fetch(url, {
@@ -177,31 +170,44 @@ const Server = async (url) => {
   const Serverjson = await GetServer.json();
   return Serverjson;
 };
-Server("https://jsonplaceholder.typicode.com/posts")
 
-  .then( GetserverJson => {
-    GetserverJson.forEach((item) => {
-      ServerTeg(item);
+Server("https://jsonplaceholder.typicode.com/posts")
+  .then((GetserverJson) => {
+    GetserverJson.forEach((post) => {
+      ServerTeg(post);
     });
   })
-
-  .catch( error => {
+  .catch((error) => {
     const section = document.getElementById("StatiaBox");
     const Perror = document.createElement("p");
     Perror.innerText = "ERROR";
     section.appendChild(Perror);
   });
 
-const ServerTeg = item  => {
+const ServerTeg = (post) => {
   const article = document.createElement("article");
-  const h2 = document.createElement("h2");
-  const p = document.createElement("p");
+  // article.setAttribute("id", post.id)
+
   const span = document.createElement("span");
-  const buttan = document.createElement("button");
-  buttan.inetrext = "open post";
-  h2.innerText = item.title;
-  article.appendChild(h2);
+  span.innerHTML = `<i class="fa-solid fa-arrows-up-down" id="${post.id}-" ></i>`;
+
+  const Serverh2 = document.createElement("h2");
+  Serverh2.innerText = post.title;
+
+  const button = document.createElement("button");
+  button.setAttribute("class", "clearpost");
+  button.innerHTML = '<i class="fa-solid fa-x" ></i>';
+  button.setAttribute("data-id", post.id);
+
+  article.appendChild(span);
+  article.appendChild(button);
+  article.appendChild(Serverh2);
   section.appendChild(article);
-  console.log(item.id);
+
+  document.getElementById(`${post.id}-`).addEventListener("click", () => {
+    Server(`https://jsonplaceholder.typicode.com/posts/${post.id}`)
+      Serverp.innerText = post.body;
+      console.log(Serverp);
+    
+  });
 };
-ServerTeg();

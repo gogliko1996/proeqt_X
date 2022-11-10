@@ -125,27 +125,21 @@ window.addEventListener("scroll", () => {
   if (Scroll > 75) {
     header.style.background = "rgba(12, 45, 136, 0.1)";
   }
-
   if (Scroll > 150) {
     header.style.background = "rgba(12, 45, 136, 0.2)";
   }
-
   if (Scroll > 250) {
     header.style.background = "rgba(12, 45, 136, 0.5)";
   }
-
   if (Scroll > 350) {
     header.style.background = "rgba(12, 45, 136, 0.7)";
   }
-
   if (Scroll > 450) {
     header.style.background = "rgba(12, 45, 136, 0.9)";
   }
-
   if (Scroll > 400) {
     header.style.background = "rgba(12, 45, 136, 1)";
   }
-
   if (Scroll === 0) {
     header.style.background = "rgba(12, 45, 136, 0)";
   }
@@ -157,6 +151,8 @@ let ArrayFillter = []; ////   fillter method   array  //////////
 
 const section = document.getElementById("StatiaBox");
 const Serverp = document.createElement("p");
+const savepost = document.getElementById("post");
+const form = document.getElementById("postvalue");
 
 const Server = async (url) => {
   const GetServer = await fetch(url, {
@@ -185,8 +181,10 @@ Server("https://jsonplaceholder.typicode.com/posts")
   });
 
 const ServerTeg = (post) => {
+  ArrayFillter.push(post.title); //filter metod array ...................
+
   const article = document.createElement("article");
-  // article.setAttribute("id", post.id)
+  article.setAttribute("class", "title");
 
   const span = document.createElement("span");
   span.innerHTML = `<i class="fa-solid fa-arrows-up-down" id="${post.id}-" ></i>`;
@@ -194,20 +192,59 @@ const ServerTeg = (post) => {
   const Serverh2 = document.createElement("h2");
   Serverh2.innerText = post.title;
 
-  const button = document.createElement("button");
-  button.setAttribute("class", "clearpost");
-  button.innerHTML = '<i class="fa-solid fa-x" ></i>';
-  button.setAttribute("data-id", post.id);
+  const clearspan = document.createElement("span");
+  clearspan.setAttribute("class", "clearpost");
+  clearspan.innerHTML = `<i class="fa-solid fa-x" id="${post.id}b" ></i>`;
 
   article.appendChild(span);
-  article.appendChild(button);
+  article.appendChild(clearspan);
   article.appendChild(Serverh2);
   section.appendChild(article);
 
   document.getElementById(`${post.id}-`).addEventListener("click", () => {
-    Server(`https://jsonplaceholder.typicode.com/posts/${post.id}`)
-      Serverp.innerText = post.body;
-      console.log(Serverp);
-    
+    article.setAttribute("id", `${post.id}+`);
+    article.classList.toggle("newpost");
+    Server(`https://jsonplaceholder.typicode.com/posts/${post.id}`);
+    Serverp.innerText = post.body;
+    document.getElementById(`${post.id}+`).appendChild(Serverp);
+    console.log(article);
+  });
+
+  document.getElementById(`${post.id}b`).addEventListener("click", () => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`, {
+      method: "DELETE",
+    });
+    article.remove();
   });
 };
+
+form.addEventListener("submit", (ivent) => {
+  ivent.preventDefault();
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify({
+      title: ivent.target.value,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      ServerTeg(json);
+    });
+});
+
+// post scrol animation ....................................
+
+window.addEventListener("scroll", () =>{
+  const postscroll = this.scrollY;
+  if(postscroll > 400){
+    section.style.width = "85%";
+    section.style.height = "6000px";
+  }
+  if (postscroll < 400){
+    section.style.width = "30%";
+    section.style.height = "200px";
+  }
+})

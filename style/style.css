@@ -79,6 +79,41 @@ header nav ul a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* filter input ............................. */
+
+.filter {
+    width: 34%;
+    margin-top: 57px;
+    margin-right: 10%;
+    display: flex;
+}
+.filter input {
+    width: 100%;
+    height: 34px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(90, 90, 87, 0.5);
+}
+.filter button {
+    width: 39px;
+    border-radius: 10px;
+    background-color: rgba(90, 90, 87, 0.5);
+}
+
+.addtext {
+    position: absolute;
+    background-color: rgb(34, 138, 138, 0.5);
+    top: 100px;
+    left: 50%;
+    width: 50%;
+    padding: 20px;
+    display: none;
+}
+.addtext li {
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(49, 6, 6);
+}
 /* slider .................................. */
 
 .slider {
@@ -265,6 +300,16 @@ header nav ul a {
     font-size: 45px;
     color: rgb(41, 146, 153, 0.5);
 }
+.postremov {
+    display: none;
+}
+.postadd{
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 
 
 @media only screen and (max-width: 1024px){
@@ -294,6 +339,11 @@ header nav ul a {
     /* server ................... */
     .StatiaBox {
         width: 60%;
+    }
+
+    /* filter ................................ */
+    .addtext {
+        left: 24%;
     }
 
 }

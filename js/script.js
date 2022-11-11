@@ -144,7 +144,7 @@ window.addEventListener("scroll", () => {
     header.style.background = "rgba(12, 45, 136, 0)";
   }
 });
-
+const formFilter = document.getElementById("filterserch");
 let ArrayFillter = []; ////   fillter method   array  //////////
 
 // Server pick up ,............................
@@ -152,7 +152,7 @@ let ArrayFillter = []; ////   fillter method   array  //////////
 const section = document.getElementById("StatiaBox");
 const Serverp = document.createElement("p");
 const savepost = document.getElementById("post");
-const form = document.getElementById("postvalue");
+const form = document.getElementById("addpost");
 
 const Server = async (url) => {
   const GetServer = await fetch(url, {
@@ -181,7 +181,13 @@ Server("https://jsonplaceholder.typicode.com/posts")
   });
 
 const ServerTeg = (post) => {
-  ArrayFillter.push(post.title); //filter metod array ...................
+  //filter metod array text add...................
+  const li = document.createElement("li");
+  li.setAttribute("class", "postremov");
+  li.innerText = post.title;
+  ArrayFillter.push(li);
+  document.getElementById("addtext").appendChild(li);
+  // ............................/////////////////////
 
   const article = document.createElement("article");
   article.setAttribute("class", "title");
@@ -248,3 +254,24 @@ window.addEventListener("scroll", () =>{
     section.style.height = "200px";
   }
 })
+
+// filter metthod serch ...................
+const divchild = document.getElementById("addtext");
+
+const filterfunction = functional => {
+  ArrayFillter.forEach(item =>{
+    divchild.appendChild(item);
+    if(item.innerText.toLowerCase().includes(functional.toLowerCase()) & functional !== ""){
+      divchild.style.display = "block";
+      item.classList.add("postadd")
+    }else{
+      item.classList.remove("postadd")   
+      divchild.style.display = "none";
+     }
+  })
+}
+
+formFilter.addEventListener("input", (textvalue) =>{
+  filterfunction(textvalue.target.value);
+  
+  })

@@ -309,8 +309,80 @@ header nav ul a {
     margin-top: 10px;
     cursor: pointer;
 }
-
-
+.grow {
+    margin: 100px 40%;
+    font-size: 30px;
+}
+.businessfast {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px auto;
+    transform: skew(35deg, 20deg);
+    transition: 1s;
+}
+.transform {
+    transform: skew(0deg, 0deg);
+}
+.foto {
+    position: relative;
+    width: 40%;
+   
+}
+.foto img {
+    width: 100%;
+    height: 100%;
+}
+.newfuture_box {
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px;
+    width: 60%;
+    height: 110px;
+    right: -178px;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px  black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.div_ring {
+    background-color: bisque;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.newtext p {
+    margin-top: 10px;
+}
+.statia {
+    width: 40%;
+}
+.divgrow {
+    width: 30%;
+    font-size: 30px;
+    margin-left: 5%;
+}
+.engage_box {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.engage {
+    margin-right: 20%; 
+}
+.Engage_text p {
+    width: 70%;
+    margin-top: 20px;
+}
+Engage_text h2 {
+    width: 50%;
+}
 
 @media only screen and (max-width: 1024px){
 
@@ -344,6 +416,30 @@ header nav ul a {
     /* filter ................................ */
     .addtext {
         left: 24%;
+    }
+
+    .businessfast {
+        width: 60%;
+        flex-direction:column;
+        transform: skew(15deg, 15deg);
+    }
+    .transform {
+        transform: skew(0deg, 0deg);
+    }
+    .foto {
+        position: relative;
+        width: 100%;
+        height: 900px;
+    }
+    .statia {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .newfuture_box {
+       width: 90%;
+        right: 20px;
+        top:80%;
     }
 
 }

@@ -280,7 +280,7 @@ formFilter.addEventListener("input", (textvalue) => {
 // animation Grow your business fast................
 window.addEventListener("scroll", () => {
   const AnimeScroll = this.scrollY;
-  if (AnimeScroll >= 7085) {
+  if (AnimeScroll > 6785) {
     document.getElementById("businessfast").classList.add("transform");
   } else {
     document.getElementById("businessfast").classList.remove("transform");

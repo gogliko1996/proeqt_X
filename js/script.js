@@ -116,7 +116,7 @@ Burger.addEventListener("click", () => {
   BurgerManu.classList.toggle("burgermanublock");
 });
 
-// navigation scrol background color ..............
+// navigation scroll background color ..............
 
 const header = document.getElementById("header");
 window.addEventListener("scroll", () => {
@@ -145,7 +145,8 @@ window.addEventListener("scroll", () => {
   }
 });
 const formFilter = document.getElementById("filterserch");
-let ArrayFillter = []; ////   fillter method   array  //////////
+
+let ArrayFillter = []; ////   fillter method array  //////////
 
 // Server pick up ,............................
 
@@ -158,11 +159,9 @@ const Server = async (url) => {
   const GetServer = await fetch(url, {
     method: "GET",
   });
-
   if (GetServer.status !== 200) {
     throw GetServer.status;
   }
-
   const Serverjson = await GetServer.json();
   return Serverjson;
 };
@@ -181,7 +180,7 @@ Server("https://jsonplaceholder.typicode.com/posts")
   });
 
 const ServerTeg = (post) => {
-  //filter metod array text add...................
+  //filter method array text add...................
   const li = document.createElement("li");
   li.setAttribute("class", "postremov");
   li.innerText = post.title;
@@ -243,47 +242,56 @@ form.addEventListener("submit", (ivent) => {
 
 // post scrol animation ....................................
 
-window.addEventListener("scroll", () =>{
+window.addEventListener("scroll", () => {
   const postscroll = this.scrollY;
-  if(postscroll > 400){
+  if (postscroll > 400) {
     section.style.width = "85%";
     section.style.height = "6000px";
   }
-  if (postscroll < 400){
+  if (postscroll < 400) {
     section.style.width = "30%";
     section.style.height = "200px";
   }
-})
+});
 
 // filter metthod serch ...................
 const divchild = document.getElementById("addtext");
 
-const filterfunction = functional => {
-  ArrayFillter.forEach(item =>{
+const filterfunction = (functional) => {
+  ArrayFillter.forEach((item) => {
     divchild.appendChild(item);
-    if(item.innerText.toLowerCase().includes(functional.toLowerCase()) & functional !== ""){
+    if (
+      item.innerText.toLowerCase().includes(functional.toLowerCase()) &
+      (functional !== "")
+    ) {
       divchild.style.display = "block";
-      item.classList.add("postadd")
-    }else{
-      item.classList.remove("postadd")   
+      item.classList.add("postadd");
+    } else {
+      item.classList.remove("postadd");
       divchild.style.display = "none";
-     }
-  })
-}
-
-formFilter.addEventListener("input", (textvalue) =>{
-  filterfunction(textvalue.target.value);
-  })
-
-
-  // animation Grow your business fast................
-  window.addEventListener("scroll", () =>{
-    const AnimeScroll = this.scrollY;
-    if(AnimeScroll >= 7085){
-      document.getElementById("businessfast").classList.add("transform");
-    }else {
-      document.getElementById("businessfast").classList.remove("transform");
     }
-    
+  });
+};
 
+formFilter.addEventListener("input", (textvalue) => {
+  filterfunction(textvalue.target.value);
+});
+
+// animation Grow your business fast................
+window.addEventListener("scroll", () => {
+  const AnimeScroll = this.scrollY;
+  if (AnimeScroll >= 7085) {
+    document.getElementById("businessfast").classList.add("transform");
+  } else {
+    document.getElementById("businessfast").classList.remove("transform");
+  }
+});
+
+// scroll button top 0....................................
+ const buttonTop = document.getElementById("ScrolTop");
+ buttonTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior:"smooth"
   })
+ })

@@ -342,7 +342,7 @@ header nav ul a {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 10px auto;
-    transform: skew(35deg, 20deg);
+    transform: skew(18deg, 28deg);
     transition: 1s;
 }
 .transform {
@@ -473,7 +473,56 @@ Engage_text h2 {
     font-size: 20px;
     margin-left: -30px;
 }
+/* ITKol - Partner for Your Business<//////////////// */
 
+.itkol {
+    width: 60%;
+    height: 33px;
+    margin: 100px auto;
+    padding: 10px;
+    text-align: center;  
+}
+.itkol h2 {
+    font-size: 50px;
+}
+.itkol p {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.itkol a {
+    color: #FF4495;
+    padding: 13px 34px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 25px;
+    border: 1px solid #FF4495;
+    transition: 1s;
+}
+.itkol a:hover {
+    background-color: #FF4495;
+    color: #ffffff;
+}
+.calculation {
+    width: 95%;
+    margin: 350px auto;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}
+.calculation div {
+    width: 250px;
+    text-align: center;
+}
+.calculation div span {
+    font-size: 54px;  
+    font-family: "Josefin Sans",sans-serif;
+}
+.calculation div p {
+    font-size: 24px;
+    margin-top: 20px;
+}
 
 
 @media only screen and (max-width: 1024px){
@@ -541,3 +590,7 @@ Engage_text h2 {
     
 
 }
+
+
+
+

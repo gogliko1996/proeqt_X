@@ -288,10 +288,38 @@ window.addEventListener("scroll", () => {
 });
 
 // scroll button top 0....................................
- const buttonTop = document.getElementById("ScrolTop");
- buttonTop.addEventListener("click", () => {
+const buttonTop = document.getElementById("ScrolTop");
+buttonTop.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior:"smooth"
-  })
- })
+    behavior: "smooth",
+  });
+});
+
+// itkol taimer .........................................
+let time = 1;
+setInterval(() => {
+  if (time === 2500) {
+    return;
+  }
+  time++;
+  document.getElementById("timSpan").innerText = time + "+";
+}, 1);
+
+let minut = 1;
+setInterval(() =>{
+  if(minut === 350){
+    return;
+  }
+  minut ++;
+  document.getElementById("minutSpan").innerText = minut + "+";
+}, 30) ;
+
+let secund = 1;
+setInterval(() =>{
+  if(secund === 20){
+    return;
+  }
+  secund ++;
+  document.getElementById("secundSpan").innerText = secund + "+";
+}, 500);

@@ -588,6 +588,26 @@ Engage_text h2 {
         padding: 150px 5%;
     }
     
+}
+
+
+@media only screen and (max-width: 750px) {
+    .calculation {
+        margin: 450px auto;
+    }
+
+}
+
+@media only screen and (max-width: 550px){
+    .calculation {
+        margin: 570px auto;
+    }
+
+}
+@media only screen and (max-width: 414px) {
+    .calculation {
+        margin: 700px auto;
+    }
 
 }
 

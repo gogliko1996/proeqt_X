@@ -307,7 +307,7 @@ setInterval(() => {
 }, 1);
 
 let minut = 1;
-setInterval(() =>{
+setInterval(() => {
   if(minut === 350){
     return;
   }
@@ -316,7 +316,7 @@ setInterval(() =>{
 }, 30) ;
 
 let secund = 1;
-setInterval(() =>{
+setInterval(() => {
   if(secund === 20){
     return;
   }

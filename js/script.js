@@ -297,29 +297,35 @@ buttonTop.addEventListener("click", () => {
 });
 
 // itkol taimer .........................................
-let time = 1;
-setInterval(() => {
-  if (time === 2500) {
-    return;
-  }
-  time++;
-  document.getElementById("timSpan").innerText = time + "+";
-}, 1);
 
-let minut = 1;
-setInterval(() => {
-  if(minut === 350){
-    return;
-  }
-  minut ++;
-  document.getElementById("minutSpan").innerText = minut + "+";
-}, 30) ;
+window.addEventListener("scroll", () => {
+  const timeScroll = this.scrollY;
+  if (timeScroll > 8070) {
+    let time = 1;
+    setInterval(() => {
+      if (time === 2500) {
+        return;
+      }
+      time++;
+      document.getElementById("timSpan").innerText = time + "+";
+    }, 1);
 
-let secund = 1;
-setInterval(() => {
-  if(secund === 20){
-    return;
+    let minut = 1;
+    setInterval(() => {
+      if (minut === 350) {
+        return;
+      }
+      minut++;
+      document.getElementById("minutSpan").innerText = minut + "+";
+    }, 30);
+
+    let secund = 1;
+    setInterval(() => {
+      if (secund === 20) {
+        return;
+      }
+      secund++;
+      document.getElementById("secundSpan").innerText = secund + "+";
+    }, 500);
   }
-  secund ++;
-  document.getElementById("secundSpan").innerText = secund + "+";
-}, 500);
+});

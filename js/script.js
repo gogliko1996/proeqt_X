@@ -300,7 +300,8 @@ buttonTop.addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
   const timeScroll = this.scrollY;
-  if (timeScroll > 8070) {
+  console.log(timeScroll);
+  if (timeScroll === 9100) {
     let time = 1;
     setInterval(() => {
       if (time === 2500) {
@@ -328,4 +329,5 @@ window.addEventListener("scroll", () => {
       document.getElementById("secundSpan").innerText = secund + "+";
     }, 500);
   }
+  
 });

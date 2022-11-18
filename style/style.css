@@ -603,7 +603,7 @@ Engage_text h2 {
     transform: translateX(-100px);
   }
   80% {
-    transform: translateX(10px);
+    transform: translateX(20px);
   }
   100% {
     opacity: 1;

@@ -334,7 +334,8 @@ window.addEventListener("scroll", () => {
 // Innovative IT Solution for your Business & Startup..........................
 window.addEventListener("scroll", () =>{
   const inovationScroll = this.scrollY;
-  if(inovationScroll >= 10715){
+  console.log(inovationScroll);
+  if(inovationScroll > 9800){
     document.getElementById("innovation").setAttribute("class", "innovation");
   }
 })

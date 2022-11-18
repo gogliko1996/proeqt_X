@@ -300,7 +300,6 @@ buttonTop.addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
   const timeScroll = this.scrollY;
-  console.log(timeScroll);
   if (timeScroll > 8100) {
     let time = 1;
     setInterval(() => {
@@ -329,5 +328,13 @@ window.addEventListener("scroll", () => {
       document.getElementById("secundSpan").innerText = secund + "+";
     }, 500);
   }
-  
 });
+
+
+// Innovative IT Solution for your Business & Startup..........................
+window.addEventListener("scroll", () =>{
+  const inovationScroll = this.scrollY;
+  if(inovationScroll >= 10715){
+    document.getElementById("innovation").setAttribute("class", "innovation");
+  }
+})

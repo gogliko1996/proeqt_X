@@ -99,13 +99,13 @@ Arrow_l.addEventListener("click", () => {
   slider(next);
 });
 setInterval(() => {
-  if (next == 0) {
-    next = SlidArray.length - 1;
+  if (next == SlidArray.length - 1) {
+    next = 0;
   } else {
-    next--;
+    next++;
   }
   slider(next);
-}, 5000);
+}, 6000);
 
 // burger menu..............................
 
@@ -301,7 +301,7 @@ buttonTop.addEventListener("click", () => {
 window.addEventListener("scroll", () => {
   const timeScroll = this.scrollY;
   console.log(timeScroll);
-  if (timeScroll === 9100) {
+  if (timeScroll > 8100) {
     let time = 1;
     setInterval(() => {
       if (time === 2500) {

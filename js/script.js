@@ -89,6 +89,12 @@ Arrow_r.addEventListener("click", () => {
     next++;
   }
   slider(next);
+  h2.setAttribute("class", "h2_animText");
+  p.setAttribute("class", "P_animeTxt");
+  setTimeout(() => {
+    h2.classList.remove("h2_animText");
+    p.classList.remove("P_animeTxt");
+  }, 1000);
 });
 Arrow_l.addEventListener("click", () => {
   if (next == 0) {
@@ -97,6 +103,12 @@ Arrow_l.addEventListener("click", () => {
     next--;
   }
   slider(next);
+  h2.setAttribute("class", "h2_animText");
+  p.setAttribute("class", "P_animeTxt");
+  setTimeout(() => {
+    h2.classList.remove("h2_animText");
+    p.classList.remove("P_animeTxt");
+  }, 1000);
 });
 setInterval(() => {
   if (next == SlidArray.length - 1) {
@@ -105,6 +117,12 @@ setInterval(() => {
     next++;
   }
   slider(next);
+  h2.setAttribute("class", "h2_animText");
+  p.setAttribute("class", "P_animeTxt");
+  setTimeout(() => {
+    h2.classList.remove("h2_animText");
+    p.classList.remove("P_animeTxt");
+  }, 1000);
 }, 6000);
 
 // burger menu..............................
@@ -117,7 +135,6 @@ Burger.addEventListener("click", () => {
 });
 
 // navigation scroll background color ..............
-
 const header = document.getElementById("header");
 window.addEventListener("scroll", () => {
   const Scroll = this.scrollY;
@@ -149,7 +166,6 @@ const formFilter = document.getElementById("filterserch");
 let ArrayFillter = []; ////   fillter method array  //////////
 
 // Server pick up ,............................
-
 const section = document.getElementById("StatiaBox");
 const Serverp = document.createElement("p");
 const savepost = document.getElementById("post");
@@ -241,7 +257,6 @@ form.addEventListener("submit", (ivent) => {
 });
 
 // post scrol animation ....................................
-
 window.addEventListener("scroll", () => {
   const postscroll = this.scrollY;
   if (postscroll > 400) {
@@ -330,12 +345,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
 // Innovative IT Solution for your Business & Startup..........................
 window.addEventListener("scroll", () =>{
   const inovationScroll = this.scrollY;
-  console.log(inovationScroll);
-  if(inovationScroll > 9800){
-    document.getElementById("innovation").setAttribute("class", "innovation");
+  if(inovationScroll > 10200){
+      setTimeout(() => {
+        document.getElementById("innovation").setAttribute("class", "innovation");
+      }, 500);
   }
 })

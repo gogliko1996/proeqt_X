@@ -74,7 +74,7 @@ header nav ul {
   justify-content: space-around;
 }
 header nav ul a {
-  color: #000000;
+  color: #ff0000;
   font-size: 18px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -132,17 +132,27 @@ header nav ul a {
 }
 .slider h2 {
   position: absolute;
+  color: red;
   width: 15%;
   left: 10%;
   top: 150px;
   font-size: 50px;
 }
+.h2_animText {
+  animation-name: h2anime;
+  animation-duration: 1s;
+}
 .slider p {
   position: absolute;
+  color: red;
   width: 20%;
   left: 10%;
   top: 400px;
   font-size: 24px;
+}
+.P_animeTxt {
+  animation-name: Aanime;
+  animation-duration: 1s;
 }
 .arrow {
   position: absolute;
@@ -574,13 +584,21 @@ Engage_text h2 {
 .inspireImg:hover {
   filter: blur(0px);
 }
-
-.innovation {
-  position: relative;
-  background-color: #ff4495;
+#innovation {
+  background-image: url(https://preview.colorlib.com/theme/itkol/assets/img/gallery/section_bg01.jpg.webp);
+  background-repeat: no-repeat;
   width: 100%;
   height: 600px;
   margin-top: 100px;
+}
+#innovation h2 {
+  opacity: 0;
+} 
+#innovation a {
+ opacity: 0;
+}
+.innovation {
+  position: relative;
 }
 .innovation div {
   position: absolute;
@@ -589,9 +607,10 @@ Engage_text h2 {
   top: 50%;
   text-align: center;
 }
-.innovation div h2 {
+.innovation  h2 {
   font-size: 50px;
-  color: #ffffff;
+  opacity: 1 !important;
+  color: #000000 !important;
   margin-bottom: 100px;
   animation-name: h2anime;
   animation-duration: 2s;
@@ -610,26 +629,31 @@ Engage_text h2 {
     transform: translateX(0px);
   }
 }
-.innovation div a {
+.innovation  a {
   padding: 15px 10px;
   border: 2px solid #000000;
-  color: #ffffff;
+  opacity: 1 !important;
+  color: #000000;
   border-radius: 10px;
   animation-name: Aanime;
   animation-duration: 2s;
+}
+.innovation  a:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 @keyframes Aanime {
   0% {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateX(100px);
   }
   80% {
-    transform: translateY(10px);
+    transform: translateX(-10px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
 }
 

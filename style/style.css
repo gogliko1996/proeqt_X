@@ -128,7 +128,10 @@ header nav ul a {
   height: 100%;
   z-index: -1;
   object-fit: cover;
-  transition: 1s;
+}
+.img_anime {
+  animation-name: h2anime;
+  animation-duration: 1s;
 }
 .slider h2 {
   position: absolute;
@@ -584,6 +587,40 @@ Engage_text h2 {
 .inspireImg:hover {
   filter: blur(0px);
 }
+
+
+/* Innovative IT Solution for your Business & Startup............... */
+.trun_on {
+  background-color: hsl(0, 81%, 47%, 0.5);
+  width: 80px;
+  height: 80px;
+  margin: 100px auto;
+  border-radius: 50%;
+  border: 1px solid #080000;
+  text-align: center;
+  animation-name: TurnOnAnime ;
+  animation-duration: 2s;
+}
+.fa-play {
+  margin-top: 26%;
+  font-size: 40px;
+  color: #ffffff;
+}
+@keyframes TurnOnAnime {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  80%{
+    transform: translateY(10px);
+
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
 #innovation {
   background-image: url(https://preview.colorlib.com/theme/itkol/assets/img/gallery/section_bg01.jpg.webp);
   background-repeat: no-repeat;
@@ -604,7 +641,7 @@ Engage_text h2 {
   position: absolute;
   width: 100%;
   left: 0px;
-  top: 50%;
+  top: 10%;
   text-align: center;
 }
 .innovation  h2 {

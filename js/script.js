@@ -228,7 +228,6 @@ const ServerTeg = (post) => {
     Server(`https://jsonplaceholder.typicode.com/posts/${post.id}`);
     Serverp.innerText = post.body;
     document.getElementById(`${post.id}+`).appendChild(Serverp);
-    console.log(article);
   });
 
   document.getElementById(`${post.id}b`).addEventListener("click", () => {
@@ -350,6 +349,7 @@ window.addEventListener("scroll", () =>{
   const inovationScroll = this.scrollY;
   if(inovationScroll > 10200){
       setTimeout(() => {
+        document.getElementById("trun_on").setAttribute("class", "trun_on");
         document.getElementById("innovation").setAttribute("class", "innovation");
       }, 500);
   }

@@ -225,9 +225,15 @@ const ServerTeg = (post) => {
   document.getElementById(`${post.id}-`).addEventListener("click", () => {
     article.setAttribute("id", `${post.id}+`);
     article.classList.toggle("newpost");
-    Server(`https://jsonplaceholder.typicode.com/posts/${post.id}`);
+    if(article.classList[1] == "newpost"){
+      Server(`https://jsonplaceholder.typicode.com/posts/${post.id}`);
     Serverp.innerText = post.body;
     document.getElementById(`${post.id}+`).appendChild(Serverp);
+    document.getElementById(`${post.id}-`).style.color = "#ffffff";
+    }else {
+      Serverp.remove();
+      document.getElementById(`${post.id}-`).style.color = "#000000";
+    }
   });
 
   document.getElementById(`${post.id}b`).addEventListener("click", () => {
@@ -260,11 +266,11 @@ window.addEventListener("scroll", () => {
   const postscroll = this.scrollY;
   if (postscroll > 400) {
     section.style.width = "85%";
-    section.style.height = "6000px";
+    section.style.height = "250px";
   }
   if (postscroll < 400) {
     section.style.width = "30%";
-    section.style.height = "200px";
+    section.style.height = "250px";
   }
 });
 
@@ -294,7 +300,7 @@ formFilter.addEventListener("input", (textvalue) => {
 // animation Grow your business fast................
 window.addEventListener("scroll", () => {
   const AnimeScroll = this.scrollY;
-  if (AnimeScroll > 6785) {
+  if (AnimeScroll > 700) {
     document.getElementById("businessfast").classList.add("transform");
   } else {
     document.getElementById("businessfast").classList.remove("transform");
@@ -311,10 +317,9 @@ buttonTop.addEventListener("click", () => {
 });
 
 // itkol taimer .........................................
-
 window.addEventListener("scroll", () => {
   const timeScroll = this.scrollY;
-  if (timeScroll > 8100) {
+  if (timeScroll > 2895) {
     let time = 1;
     setInterval(() => {
       if (time === 2500) {
@@ -345,12 +350,12 @@ window.addEventListener("scroll", () => {
 });
 
 // Innovative IT Solution for your Business & Startup..........................
-window.addEventListener("scroll", () =>{
+window.addEventListener("scroll", () => {
   const inovationScroll = this.scrollY;
-  if(inovationScroll > 10200){
-      setTimeout(() => {
-        document.getElementById("trun_on").setAttribute("class", "trun_on");
-        document.getElementById("innovation").setAttribute("class", "innovation");
-      }, 500);
+  if (inovationScroll > 4500) {
+    setTimeout(() => {
+      document.getElementById("trun_on").setAttribute("class", "trun_on");
+      document.getElementById("innovation").setAttribute("class", "innovation");
+    }, 500);
   }
-})
+});

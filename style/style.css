@@ -267,10 +267,10 @@ header nav ul a {
   font-size: 30px;
 }
 .StatiaBox {
-  width: 30%;
+  width: 35%;
   height: 200px;
   padding: 15px;
-  margin: 50px auto;
+  margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -281,11 +281,12 @@ header nav ul a {
   position: relative;
   background-color: aqua;
   width: 350px;
-  height: 150px;
+  height: 200px;
   margin-top: 20px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 2px 2px 5px black;
+  transition: 0.5s;
 }
 .clearpost {
   position: absolute;
@@ -307,11 +308,14 @@ header nav ul a {
 }
 .title p {
   font-size: 20px;
-  color: blueviolet;
-  margin-top: 30%;
+  color: rgb(241, 237, 245);
+  margin-top: -38%;
+  transform: rotateX(0.5turn);
 }
-.newpost {
-  height: 400px;
+.newpost  {
+  transform: rotateX(0.5turn);
+  transition: 0.5s;
+  background-color: #000000;
 }
 .addpost {
   width: 25%;
@@ -613,13 +617,11 @@ Engage_text h2 {
   }
   80%{
     transform: translateY(10px);
-
   }
   100%{
     opacity: 1;
     transform: translateY(0px);
   }
-  
 }
 #innovation {
   background-image: url(https://preview.colorlib.com/theme/itkol/assets/img/gallery/section_bg01.jpg.webp);
